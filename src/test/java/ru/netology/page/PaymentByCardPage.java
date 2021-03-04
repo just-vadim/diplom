@@ -19,13 +19,8 @@ public class PaymentByCardPage {
     private SelenideElement continueButton = $$("button").find(exactText("Продолжить"));
     private SelenideElement successMsg = $(".notification_status_ok");
     private SelenideElement successMsgCloseButton = $(".notification_status_ok").parent().$(".notification__closer");
-
-    public void successMsgClose() {
-        successMsgCloseButton.click();
-    }
-    public void successMsgWait() {
-        successMsg.waitUntil(visible, 15000);
-    }
+    private SelenideElement declineMsg = $(".notification_status_error");
+    private SelenideElement declineMsgCloseButton = $(".notification_status_error").parent().$(".notification__closer");
 
     public PaymentByCardPage() {
         heading.shouldBe(visible);
@@ -44,5 +39,21 @@ public class PaymentByCardPage {
         cardholderInputField.setValue(card.getCardholder());
         cvvInputField.setValue(card.getCvv());
         continueButton.click();
+    }
+
+    public void successMsgClose() {
+        successMsgCloseButton.click();
+    }
+
+    public void declineMsgClose() {
+        declineMsgCloseButton.click();
+    }
+
+    public void successMsgWait() {
+        successMsg.waitUntil(visible, 15000);
+    }
+
+    public void declineMsgWait() {
+        declineMsg.waitUntil(visible, 15000);
     }
 }

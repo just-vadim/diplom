@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import ru.netology.page.StartPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataHelper.*;
+import static ru.netology.data.SQLHelper.getPaymentByCardStatus;
 
 public class PaymentByCardTest {
     @BeforeEach
@@ -21,5 +23,6 @@ public class PaymentByCardTest {
         paymentByCardPage.inputData(getValidCardInfo());
         paymentByCardPage.successMsgWait();
         paymentByCardPage.successMsgClose();
+        assertEquals("APPROVED", getPaymentByCardStatus());
     }
 }

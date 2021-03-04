@@ -1,6 +1,7 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
+import ru.netology.data.Card;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
@@ -16,7 +17,15 @@ public class PaymentByCardPage {
     private SelenideElement cardholderInputField = $(byText("Владелец")).parent().$("[class='input__control']");
     private SelenideElement cvvInputField = $(byText("CVC/CVV")).parent().$("[class='input__control']");
     private SelenideElement continueButton = $$("button").find(exactText("Продолжить"));
-    //private SelenideElement successMsg = $(".notification_status_ok");
+    private SelenideElement successMsg = $(".notification_status_ok");
+    private SelenideElement successMsgCloseButton = $(".notification_status_ok").parent().$(".notification__closer");
+
+    public void successMsgClose() {
+        successMsgCloseButton.click();
+    }
+    public void successMsgWait() {
+        successMsg.waitUntil(visible, 15000);
+    }
 
     public PaymentByCardPage() {
         heading.shouldBe(visible);
@@ -28,12 +37,12 @@ public class PaymentByCardPage {
         continueButton.shouldBe(visible);
     }
 
-    public void inputData() {
-        cardNumberInputFiled.setValue("4444 4444 4444 4441");
-        monthInputField.setValue("10");
-        yearInputField.setValue("23");
-        cardholderInputField.setValue("John Doe");
-        cvvInputField.setValue("777");
+    public void inputData(Card card) {
+        cardNumberInputFiled.setValue(card.getNumber());
+        monthInputField.setValue(card.getMonth());
+        yearInputField.setValue(card.getYear());
+        cardholderInputField.setValue(card.getCardholder());
+        cvvInputField.setValue(card.getCvv());
         continueButton.click();
     }
 }

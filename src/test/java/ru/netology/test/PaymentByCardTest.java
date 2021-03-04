@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import ru.netology.page.StartPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static ru.netology.data.DataHelper.*;
 
 public class PaymentByCardTest {
     @BeforeEach
@@ -17,6 +18,8 @@ public class PaymentByCardTest {
     void test() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
-        paymentByCardPage.inputData();
+        paymentByCardPage.inputData(getValidCardInfo());
+        paymentByCardPage.successMsgWait();
+        paymentByCardPage.successMsgClose();
     }
 }

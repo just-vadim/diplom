@@ -8,7 +8,6 @@ import ru.netology.page.StartPage;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PaymentOnCreditTest {
-
     @BeforeEach
     void setUpEach() {
         open("http://localhost:8080/");

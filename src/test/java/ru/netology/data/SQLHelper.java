@@ -1,5 +1,7 @@
 package ru.netology.data;
 
+import org.apache.commons.dbutils.QueryRunner;
+
 import java.sql.*;
 
 public class SQLHelper {
@@ -24,5 +26,19 @@ public class SQLHelper {
             sqlException.printStackTrace();
         }
         return null;
+    }
+
+    public static void clearDB() {
+        String credit_request_entity = "DELETE FROM credit_request_entity";
+        String order_entity = "DELETE FROM order_entity";
+        String payment_entity = "DELETE FROM payment_entity";
+        QueryRunner runner = new QueryRunner();
+        try (Connection connection = getConnection()) {
+            runner.update(connection, credit_request_entity);
+            runner.update(connection, order_entity);
+            runner.update(connection, payment_entity);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

@@ -42,7 +42,7 @@ public class DataHelper {
                 faker.numerify("###"));
     }
 
-    /* 2 done */
+    /* 2 */
     public static Card getDeclinedCardInfo() {
         return new Card(declinedCard,
                 generateMonth(),
@@ -153,7 +153,7 @@ public class DataHelper {
     /* 14 */
     public static Card getNonexistentMonthCardInfo() {
         return new Card(approvedCard,
-                "68",
+                "13",
                 generateYear(),
                 faker.name().firstName().toUpperCase() + " " + faker.name().lastName().toUpperCase(),
                 faker.numerify("###"));
@@ -218,7 +218,7 @@ public class DataHelper {
         return new Card(approvedCard,
                 generateMonth(),
                 generateYear(),
-                faker.name().firstName().toUpperCase() + " ~!@#$%^&*()_+{}[]|\"?>< " + faker.name().lastName().toUpperCase(),
+                faker.name().firstName().toUpperCase() + " " + "~!@#$%^&*()_+{}[]|\"?><" + " " + faker.name().lastName().toUpperCase(),
                 faker.numerify("###"));
     }
 

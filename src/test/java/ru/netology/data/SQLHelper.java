@@ -25,7 +25,25 @@ public class SQLHelper {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
-        return null;
+        return "NO DATA";
+    }
+
+    public static String getPaymentOnCreditStatus() {
+        String query =
+                "SELECT *" + " " +
+                "FROM order_entity INNER JOIN credit_request_entity ON order_entity.payment_id=credit_request_entity.bank_id" + " " +
+                "WHERE order_entity.payment_id=credit_request_entity.bank_id" + " " +
+                "ORDER BY credit_request_entity.created DESC" + " " +
+                "LIMIT 1";
+        try (Connection connection = getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return resultSet.getString("status");
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return "NO DATA";
     }
 
     public static void clearDB() {

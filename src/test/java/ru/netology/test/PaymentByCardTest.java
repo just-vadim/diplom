@@ -1,9 +1,9 @@
 package ru.netology.test;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.netology.page.StartPage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -12,9 +12,19 @@ import static ru.netology.data.DataHelper.*;
 import static ru.netology.data.SQLHelper.*;
 
 public class PaymentByCardTest {
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
     @BeforeEach
     void setUpEach() {
         open("http://localhost:8080/");
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
     }
 
     @AfterEach

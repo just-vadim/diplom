@@ -24,7 +24,7 @@ public class PaymentByCardTest {
 
     /* 1 */
     @Test
-    void validCardPaymentTest() {
+    void validCardPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getValidCardInfo());
@@ -35,7 +35,7 @@ public class PaymentByCardTest {
 
     /* 2 */
     @Test
-    void declinedCardPaymentTest() {
+    void declinedCardPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getDeclinedCardInfo());
@@ -46,7 +46,7 @@ public class PaymentByCardTest {
 
     /* 3 */
     @Test
-    void allFieldsEmptyPaymentTest () {
+    void allFieldsEmptyPaymentByCardTest () {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getEmptyFieldsCardInfo());
@@ -60,7 +60,7 @@ public class PaymentByCardTest {
 
     /* 4 */
     @Test
-    void cardNumberFieldEmptyPaymentTest() {
+    void cardNumberFieldEmptyPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getEmptyCardNumberFieldCardInfo());
@@ -70,7 +70,7 @@ public class PaymentByCardTest {
 
     /* 5 */
     @Test
-    void monthFiledEmptyPaymentTest() {
+    void monthFiledEmptyPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getEmptyMonthFieldCardInfo());
@@ -80,7 +80,7 @@ public class PaymentByCardTest {
 
     /* 6 */
     @Test
-    void yearFieldEmptyPaymentTest() {
+    void yearFieldEmptyPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getEmptyYearFiledCardInfo());
@@ -90,7 +90,7 @@ public class PaymentByCardTest {
 
     /* 7 */
     @Test
-    void cardholderFiledEmptyPaymentTest() {
+    void cardholderFiledEmptyPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getEmptyCardholderFiledCardInfo());
@@ -100,7 +100,7 @@ public class PaymentByCardTest {
 
     /* 8 */
     @Test
-    void cvvFieldEmptyPaymentTest() {
+    void cvvFieldEmptyPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getEmptyCVVFieldCardInfo());
@@ -110,7 +110,7 @@ public class PaymentByCardTest {
 
     /* 9 */
     @Test
-    void invalidCardNumberPaymentTest() {
+    void invalidCardNumberPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getInvalidCardNumberCardInfo());
@@ -121,7 +121,7 @@ public class PaymentByCardTest {
 
     /* 10 */
     @Test
-    void nonexistentCardNumberPaymentTest() {
+    void nonexistentCardNumberPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getNonexistentCardNumberCardInfo());
@@ -131,7 +131,7 @@ public class PaymentByCardTest {
 
     /* 11 */
     @Test
-    void incompleteCardNumberPaymentTest() {
+    void incompleteCardNumberPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getIncompleteCardNumberCardInfo());
@@ -141,7 +141,7 @@ public class PaymentByCardTest {
 
     /* 12 */
     @Test
-    void zerosInMonthFiledPaymentTest() {
+    void zerosInMonthFiledPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getZerosInMonthFiledCardInfo());
@@ -151,7 +151,7 @@ public class PaymentByCardTest {
 
     /* 13 */
     @Test
-    void mothWithoutZeroFirstCharacterPaymentTest () {
+    void mothWithoutZeroFirstCharacterPaymentByCardTest () {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getMothWithoutZeroFirstCharacterCardInfo());
@@ -161,7 +161,7 @@ public class PaymentByCardTest {
 
     /* 14 */
     @Test
-    void nonexistentMonthPaymentTest() {
+    void nonexistentMonthPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getNonexistentMonthCardInfo());
@@ -171,7 +171,7 @@ public class PaymentByCardTest {
 
     /* 15 */
     @Test
-    void zeroInYearFieldPaymentTest() {
+    void zeroInYearFieldPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getZeroInYearFieldCardInfo());
@@ -181,7 +181,7 @@ public class PaymentByCardTest {
 
     /* 16 */
     @Test
-    void expiredCardPaymentTest() {
+    void expiredCardPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getExpiredCardCardInfo());
@@ -191,7 +191,7 @@ public class PaymentByCardTest {
 
     /* 17 */
     @Test
-    void invalidYearPaymentTest() {
+    void invalidYearPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getInvalidYearCardInfo());
@@ -201,7 +201,7 @@ public class PaymentByCardTest {
 
     /* 18 */
     @Test
-    void cardholderOnlyFirstNamePaymentTest() {
+    void cardholderOnlyFirstNamePaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getCardholderOnlyFirstNameCardInfo());
@@ -212,7 +212,7 @@ public class PaymentByCardTest {
 
     /* 19 */
     @Test
-    void longCardholderNamePaymentTest() {
+    void longCardholderNamePaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getLongCardholderNameCardInfo());
@@ -223,7 +223,7 @@ public class PaymentByCardTest {
 
     /* 20 */
     @Test
-    void cyrillicCardholderNamePaymentTest() {
+    void cyrillicCardholderNamePaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getCyrillicCardholderNameCardInfo());
@@ -233,7 +233,7 @@ public class PaymentByCardTest {
 
     /* 21 */
     @Test
-    void specialCharactersInCardholderNamePaymentTest() {
+    void specialCharactersInCardholderNamePaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getSpecialCharactersInCardholderNameCardInfo());
@@ -243,7 +243,7 @@ public class PaymentByCardTest {
 
     /* 22 */
     @Test
-    void numbersInCardholderNamePaymentTest() {
+    void numbersInCardholderNamePaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getNumbersInCardholderNameCardInfo());
@@ -253,7 +253,7 @@ public class PaymentByCardTest {
 
     /* 23 */
     @Test
-    void oneNumberCVVPaymentTest() {
+    void oneNumberCVVPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getOneNumberCVVCardInfo());
@@ -263,7 +263,7 @@ public class PaymentByCardTest {
 
     /* 24 */
     @Test
-    void twoNumbersCVVPaymentTest() {
+    void twoNumbersCVVPaymentByCardTest() {
         val startPage = new StartPage();
         val paymentByCardPage = startPage.selectPaymentByCardPage();
         paymentByCardPage.inputData(getTwoNumbersCVVCardInfo());

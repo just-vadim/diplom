@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataHelper.*;
 import static ru.netology.data.DataHelper.getTwoNumbersCVVCardInfo;
 import static ru.netology.data.SQLHelper.*;
-import static ru.netology.data.SQLHelper.getPaymentByCardStatus;
 
 public class PaymentOnCreditTest {
     @BeforeEach

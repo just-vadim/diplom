@@ -5,9 +5,13 @@ import org.apache.commons.dbutils.QueryRunner;
 import java.sql.*;
 
 public class SQLHelper {
+    private static String url = System.getProperty("db.url");
+    private static String user = System.getProperty("db.user");
+    private static String password = System.getProperty("db.password");
+
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/app", "app", "pass");
+                url, user, password);
     }
 
     public static String getPaymentByCardStatus() {

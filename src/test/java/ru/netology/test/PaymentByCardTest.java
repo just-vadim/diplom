@@ -19,7 +19,7 @@ public class PaymentByCardTest {
 
     @BeforeEach
     void setUpEach() {
-        open("http://localhost:8080/");
+        open(System.getProperty("sut.url"));
     }
 
     @AfterAll

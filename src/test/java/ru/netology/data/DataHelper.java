@@ -135,7 +135,7 @@ public class DataHelper {
     /* 12 */
     public static Card getZerosInMonthFiledCardInfo() {
         return new Card(approvedCard,
-                "00",
+                String.format("%02d", 0),
                 generateYear(),
                 faker.name().firstName().toUpperCase() + " " + faker.name().lastName().toUpperCase(),
                 faker.numerify("###"));

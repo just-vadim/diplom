@@ -19,7 +19,7 @@ public class DataHelper {
         Random random = new Random();
         int num = random.nextInt(12) + 1;
         if (num < 10) {
-            return "0" + num;
+            return String.format("%02d", num);
         } else {
             return String.valueOf(num);
         }

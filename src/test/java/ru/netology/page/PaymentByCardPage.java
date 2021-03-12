@@ -2,6 +2,7 @@ package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.Card;
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
@@ -58,42 +59,42 @@ public class PaymentByCardPage {
     }
 
     public void successMsgWait() {
-        successMsg.waitUntil(visible, 15000);
+        successMsg.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void declineMsgWait() {
-        declineMsg.waitUntil(visible, 15000);
+        declineMsg.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void cardNumberBadFormatErrorWait() {
-        cardNumberBadFormatError.waitUntil(visible, 3000);
+        cardNumberBadFormatError.shouldBe(visible);
     }
 
     public void monthBadFormatErrorWait() {
-        monthBadFormatError.waitUntil(visible, 3000);
+        monthBadFormatError.shouldBe(visible);
     }
 
     public void monthInvalidExpirationDateErrorWait() {
-        monthInvalidExpirationDateError.waitUntil(visible, 3000);
+        monthInvalidExpirationDateError.shouldBe(visible);
     }
 
     public void yearBadFormatErrorWait() {
-        yearBadFormatError.waitUntil(visible, 3000);
+        yearBadFormatError.shouldBe(visible);
     }
 
     public void yearCardExpiredErrorWait() {
-        yearCardExpiredError.waitUntil(visible, 3000);
+        yearCardExpiredError.shouldBe(visible);
     }
 
     public void yearInvalidExpirationDateErrorWait() {
-        yearInvalidExpirationDateError.waitUntil(visible, 3000);
+        yearInvalidExpirationDateError.shouldBe(visible);
     }
 
     public void cardholderRequiredErrorWait() {
-        cardholderRequiredError.waitUntil(visible, 3000);
+        cardholderRequiredError.shouldBe(visible);
     }
 
     public void cvvBadFormatErrorWait() {
-        cvvBadFormatError.waitUntil(visible, 3000);
+        cvvBadFormatError.shouldBe(visible);
     }
 }

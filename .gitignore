@@ -1,8 +1,10 @@
 HELP.md
 .gradle
+.allure/
 build/
 data/
 *.log
+
 
 ### STS ###
 .apt_generated

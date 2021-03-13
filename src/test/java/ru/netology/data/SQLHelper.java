@@ -9,6 +9,10 @@ public class SQLHelper {
     static String user = System.getProperty("db.user");
     static String password = System.getProperty("db.password");
 
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(url, user, password);
+    }
+
     public static String getPaymentByCardStatus() {
         String query =
                 "SELECT *\n" +
@@ -16,8 +20,7 @@ public class SQLHelper {
                 "WHERE order_entity.payment_id=payment_entity.transaction_id\n" +
                 "ORDER BY payment_entity.created DESC\n" +
                 "LIMIT 1";
-        try (Connection connection = DriverManager.getConnection(url, user, password);
-             Statement statement = connection.createStatement()) {
+        try (Statement statement = getConnection().createStatement()) {
             ResultSet resultSet = statement.executeQuery(query);
             resultSet.next();
             return resultSet.getString("status");
@@ -34,8 +37,7 @@ public class SQLHelper {
                 "WHERE order_entity.payment_id=credit_request_entity.bank_id\n" +
                 "ORDER BY credit_request_entity.created DESC\n" +
                 "LIMIT 1";
-        try (Connection connection = DriverManager.getConnection(url, user, password);
-             Statement statement = connection.createStatement()) {
+        try (Statement statement = getConnection().createStatement()) {
             ResultSet resultSet = statement.executeQuery(query);
             resultSet.next();
             return resultSet.getString("status");
@@ -50,7 +52,7 @@ public class SQLHelper {
         String order_entity = "DELETE FROM order_entity";
         String payment_entity = "DELETE FROM payment_entity";
         QueryRunner runner = new QueryRunner();
-        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+        try (Connection connection = getConnection()) {
             runner.update(connection, credit_request_entity);
             runner.update(connection, order_entity);
             runner.update(connection, payment_entity);

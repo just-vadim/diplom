@@ -1,8 +1,8 @@
 # Дипломный проект профессии «Тестировщик»
 ## Документация
-- [План автоматизации тестирования](https://github.com/just-vadim/diplom/blob/master/documentation/Plan.md)
-- Отчёт по итогам автоматизированного тестирования
-- Отчёт по итогам автоматизации
+- [План автоматизации тестирования](https://github.com/just-vadim/diplom/blob/master/documentation/Plan.md);
+- [Отчёт по итогам автоматизированного тестирования] (https://github.com/just-vadim/diplom/blob/master/documentation/Report.md);
+- [Отчёт по итогам автоматизации] (https://github.com/just-vadim/diplom/blob/master/documentation/Summary.md).
 
 ## Инструкция по запуску
 1. **Склонировать проект из репозитория**
